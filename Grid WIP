@@ -1,0 +1,28 @@
+
+void setup() {
+  size(500, 500);
+  background(255);
+  noStroke();
+  smooth();
+  colorMode(HSB, 100);
+}
+
+float hue = 0;
+
+void draw() {
+  background(100);
+  hue = hue + 0.2;
+  int margin = 30;
+
+
+  for (int i = (margin); i <= (width-1); i = i+margin) {
+    for (int j = (margin); j <= (height-1); j = j+margin) {
+      fill(60, 100, 100);
+      rect(i-5, j-5, 5, 100);
+      rect(i-5, j-5, 100, 5);
+      for (int i2 = 40; i2 < 80; i2 = i2+5) {
+        fill(0, 0, 100);
+      }
+    }
+  }
+}
