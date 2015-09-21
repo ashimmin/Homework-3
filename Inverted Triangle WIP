@@ -1,0 +1,39 @@
+
+void setup() {
+  size(500, 500);
+  background(255);
+  noStroke();
+  smooth();
+  colorMode(HSB, 100);
+}
+
+float hue = 0;
+
+void draw() {
+  background(100);
+  hue = hue + 0.2;
+  int margin = 20;
+
+
+  for (int i = (margin); i <= (width-1); i = i+margin) {
+    for (int j = (margin); j <= (height-1); j = j+margin) {
+      fill(hue%100, 100, 100);
+      ellipse(i, j, 15, 15);
+      for (int i2 = 40; i2 < 80; i2 = i2+5) {
+        fill(0, 0, 100);
+        ellipse(490, (j + margin+1), 16, 16); //opposite side circles ((why is it not drawing over the last circles))
+        ellipse(20, (i + margin), 16, 16);
+        ellipse((20 + margin), (i + margin), 16, 16);
+        ellipse((20 + margin*2), (i + margin), 16, 16);
+        ellipse((20 + margin*3), (i + margin), 16, 16);
+        ellipse((20 + margin*4), (i + margin), 16, 16);
+        ellipse((20 + margin*5), (i + margin), 16, 16);
+        ellipse((20 + margin*6), (i + margin), 16, 16);
+        ellipse((20 + margin*7), (i + margin), 16, 16);
+        ellipse((20 + margin*8), (i + margin), 16, 16);
+        ellipse((20 + margin*9), (i + margin), 16, 16);
+        ellipse((20 + margin*10), (i + margin), 16, 16);//how do i write this as a loop?
+      }
+    }           //how to make a wave of hue over the  circles?  how to make them wave in size?
+  }
+}
